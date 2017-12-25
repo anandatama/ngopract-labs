@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  /*background: #44A08D; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to left, #44A08D , #093637); /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to left, #44A08D , #093637); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #222;
+  font-family: 'Space Mono', monospace;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  -khtml-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+#upper {
+  text-align: center;
+}
+
+#hello {
+  color: #FFFFFF;
+  font-size: 3em;
+  padding: 10px 0 20px 0;
+}
+
+#short-description {
+  color: #DDDDDD;
+}
+
+.sd-white {
+  color: #FFFFFF;
+}
+
+#cursor {
+  display: inline-block;
+}
+
+#inner-cursor {
+  opacity: 0.5;
+}
+
+#console {
+  width: 50%;
+  background: #222;
+  height: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  outline: none;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5em;
+  border: 0;
+  resize: none;
+  overflow-y: auto;
+  border-bottom: 20px solid #222;
+}
+
+.purple-text {
+  color: #BF55EC;
+}
+
+.green-text {
+  color: #66CC99;
+}
+
+#footer {
+  text-align: center;
+  color: white;
+}
+
+#footer h6 {
+  font-size: 1em;
+  color: #DDD;
+}
+
+.not {
+  text-decoration: line-through;
+}
+
+.fa-heart {
+  color: #F1A9A0;
+}
+
+a {
+  color: #F7CA18;
+  text-decoration: none;
+}
+
+#dynamic-editor {
+  color: #FFF;
+  padding: 5px;
+}
+
+header {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+nav {
+  text-align: center;
+}

@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>Ngopract Lab</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <script src="https://use.fontawesome.com/a54e4096c9.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 id="hello">Ngopract Lab<span id="cursor">_</span></h1> 
+      </nav>
+    </header>
+    <div id="container">
+      <div id="upper">
+        <h2 id="short-description">
+          "Ngoprek" is a good way to learn coding. <br/>
+          Let's learn through <span class="sd-white">NGO</span>ding and <span class="sd-white">PRACT</span>ice!
+        </h2>
+      </div>
+      <div id="console">
+        <span class="purple-text"> $ </span>
+        <span id="dynamic-editor"></span><span id="inner-cursor">|</span>
+      </div>
+      <div id="footer">
+        <h6><span class="not">Ngoprek</span> Ngopract Lab is modified with <i class="fa fa-heart"></i> by <a href="https://github.com/anandatama">@Anandatama</a></h6>
+      </div>
+    </div>
+    <script>
+      var cursorElem = document.getElementById('cursor');
+      var innerCursorElem = document.getElementById('inner-cursor');
+
+      function cursorBlink() {
+        setTimeout(function() {
+          if(cursorElem.style.visibility === 'visible') {
+            cursorElem.style.visibility = 'hidden';
+            innerCursorElem.style.visibility = 'hidden';
+          }
+          else {
+            cursorElem.style.visibility = 'visible';
+            innerCursorElem.style.visibility = 'visible';
+          }
+          cursorBlink();
+        }, 700);
+      }
+
+      cursorBlink();
+
+      var dynamicEditorElem = document.getElementById('dynamic-editor');
+
+      var textArr = [
+        "welcome to ngopract lab!",
+        "Let's do something cool and fun together! :D",
+        "p.s. Good Luck Have Fun!"
+      ];
+
+      var maximumSentences = textArr.length;
+
+      var sentence = 0;
+      var sentenceCounter = 0;
+      function cursorType() {
+        dynamicEditorElem.innerHTML += textArr[sentence][sentenceCounter];
+        sentenceCounter++;
+        if(sentenceCounter === textArr[sentence].length) {
+          setTimeout(function() {
+            removeText();
+          }, 3000);
+          return false;
+        }
+        setTimeout(function() {
+          cursorType();
+        }, 100);
+      }
+
+      function removeText() {
+        dynamicEditorElem.style.background = "#666";
+        setTimeout(function() {
+          dynamicEditorElem.innerHTML = "";
+          setTimeout(function() {
+            dynamicEditorElem.style.background = "transparent";
+            sentence++;
+            sentenceCounter = 0;
+            if(sentence === maximumSentences) {
+              sentence = 0;
+            }
+            cursorType();
+          }, 500);
+        }, 1000);
+      }
+
+      cursorType();
+
+      var colors = ["#34495E", "#2574A9", "#049372"];
+      var i = 0;
+      setInterval(function() {
+        document.getElementsByTagName("BODY")[0].style.background = colors[i];
+        i++;
+        if(i === colors.length) {
+          i = 0;
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
